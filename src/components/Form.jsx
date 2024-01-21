@@ -74,7 +74,7 @@ function Form({ number }) {
             ? "public/img/uzbekistan.png"
             : `${(companies[imgs]?.icon) } `
         }
-        alt=""
+        alt="copany img"
       />
     </StyledForm>
   );
