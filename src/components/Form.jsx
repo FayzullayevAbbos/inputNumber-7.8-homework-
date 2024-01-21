@@ -71,7 +71,7 @@ function Form({ number }) {
       <StyledImg
         src={
           imgs == null
-            ? "src/img/uzbekistan.png"
+            ? "public/img/uzbekistan.png"
             : `${(companies[imgs]?.icon) } `
         }
         alt=""

@@ -39,7 +39,7 @@ function App() {
         <Button number={number} img={"+"} setNumer={setNumer}>+</Button>
         <Button number={number} setNumer={setNumer}>0</Button>
         <Button number={number} img={"img"} setNumer={setNumer}>
-          <StyledImg src="src/img/backSpace.svg" alt="" />
+          <StyledImg src="public/img/backSpace.svg" alt="" />
         </Button>
       </StyledBtn>
     </StyledDiv>
