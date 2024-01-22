@@ -12,7 +12,7 @@ const StyledInput = styled.input`
   border-radius: 10px;
   border-color: #4b4b4b;
   font-weight: bold;
-  color: #121111;
+  color:${ (props)=>  props.color ? "red" : "#121111"} ;
 `;
 const StyledImg = styled.img`
   position: absolute;
@@ -23,6 +23,7 @@ const StyledImg = styled.img`
 
 function Form({ number }) {
   const [imgs, setimgs] = useState(null);
+  const [red , setRed] = useState(false)
   const companies = [
     {
       id: 1,
@@ -48,17 +49,20 @@ function Form({ number }) {
 
   useEffect(() => {
     if (number.length == 3) {
+      setRed(true)
       console.log("ok");
       const sliceNum = number.slice(0, length - 1);
       
       companies.forEach((company, i) => {
         if (company.codes.includes(+sliceNum)) {
           console.log(imgs);
+          setRed(false)
           setimgs((prev) => (prev = i));
         }
       });
-    }else if(number.length < 2) {
-        console.log(imgs);
+    }
+    else if(number.length < 2) {
+        
         setimgs((prev) => prev = null)
     }
 
@@ -67,7 +71,7 @@ function Form({ number }) {
   console.log("inputni klaviyatudan boshqaralomaslik un atay qilingan ");
   return (
     <StyledForm>
-      <StyledInput  value={number} type="text" />
+      <StyledInput color={red} value={number} type="text" />
       <StyledImg
         src={
           imgs == null
