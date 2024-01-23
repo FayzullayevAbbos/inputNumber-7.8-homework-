@@ -55,7 +55,7 @@ function Form({ number }) {
       
       companies.forEach((company, i) => {
         if (company.codes.includes(+sliceNum)) {
-          console.log(imgs);
+          
           setRed(false)
           setimgs((prev) => (prev = i));
         }
@@ -75,7 +75,7 @@ function Form({ number }) {
       <StyledImg
         src={
           imgs == null
-            ? "public/img/uzbekistan.png"
+            ? "src/img/uzbekistan.png"
             : `${(companies[imgs]?.icon) } `
         }
         alt="copany img"
